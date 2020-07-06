@@ -1,7 +1,40 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "link": "lerna link",
+    "link:convert": "lerna link convert"
+  },
   "devDependencies": {
-    "lerna": "^3.20.2"
+    "@nestjs/cli": "^7.0.0",
+    "@nestjs/schematics": "^7.0.0",
+    "@nestjs/testing": "^7.0.0",
+    "@types/aws-lambda": "^8.10.57",
+    "@types/express": "^4.17.3",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "@types/react-redux": "^7.1.9",
+    "@types/supertest": "^2.0.8",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "jest": "^25.1.0",
+    "lerna": "^3.20.2",
+    "prettier": "^1.19.1",
+    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-pseudo-parameters": "^2.5.0",
+    "supertest": "^4.0.2",
+    "ts-jest": "25.2.1",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.6.2",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "modern-redux": "file:packages/modern-redux",
+    "nest-app": "file:packages/nest-server",
+    "serverless-framework": "file:packages/serverless-framework"
   }
 }
