@@ -58,6 +58,18 @@ functions:
       - http:
           method: GET
           path: /hello
+  getItem:
+    handler: src/handlers/getItem.handler
+    events:
+      - http:
+          method: GET
+          path: /item/{id}
+  createAccount:
+    handler: src/handlers/createAccount.handler
+    events:
+      - http:
+          method: POST
+          path: /user
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
