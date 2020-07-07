@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "demo",
   "private": true,
   "scripts": {
     "link": "lerna link",
@@ -34,8 +34,9 @@
     "typescript": "^3.9.6"
   },
   "dependencies": {
-    "modern-redux": "file:packages/modern-redux",
-    "nest-app": "file:packages/nest-server",
-    "serverless-framework": "file:packages/serverless-framework"
+    "@demo/common": "file:packages/common",
+    "@demo/modern-redux": "file:packages/modern-redux",
+    "@demo/nest-app": "file:packages/nest-server",
+    "@demo/serverless-framework": "file:packages/serverless-framework"
   }
 }
