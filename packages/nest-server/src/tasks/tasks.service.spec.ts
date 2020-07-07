@@ -11,6 +11,7 @@ const mockTaskRepository = () => ({
 describe('TasksService', () => {
   let service: TasksService;
   let repository;
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [

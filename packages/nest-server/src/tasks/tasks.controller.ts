@@ -4,7 +4,6 @@ import {
   UsePipes,
   ValidationPipe,
   Body,
-  Delete,
   Get,
   Param,
   ParseIntPipe,
