@@ -17,6 +17,10 @@ provider:
   stackName: tshour
   apiName: tshour-api
   logRetentionInDays: 7
+  environment:
+    TASKS_TABLE_NAME: ${self:custom.TasksTable.name}
+  iamRoleStatements:
+    - ${file(iam/TasksTableIAM.yml):TasksTableIAM}
 
 # you can overwrite defaults here
 #  stage: dev
@@ -70,6 +74,21 @@ functions:
       - http:
           method: POST
           path: /user
+  createTask:
+    handler: src/handlers/createTask.handler
+    events:
+      - http:
+          method: POST
+          path: /task
+
+resources:
+  Resources:
+    TasksTable: ${file(resources/TasksTable.yml):TasksTable}
+
+custom:
+  TasksTable:
+    name: !Ref TasksTable
+    arn: !GetAtt TasksTable.Arn
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
