@@ -39,6 +39,8 @@ describe('TasksService', () => {
     };
     repository.createTask.mockResolvedValue(taskEntity);
     const task = await service.createTask(createTaskDto);
+
+    expect(task).toMatchSnapshot(taskEntity);
     expect(task).toEqual(taskEntity);
   });
 });
