@@ -13,14 +13,14 @@ provider:
   runtime: nodejs12.x
   stage: ${opt:stage, 'dev'}
   region: ap-southeast-2
-  profile: tshour
+  profile: default
   stackName: tshour
   apiName: tshour-api
   logRetentionInDays: 7
   environment:
     TASKS_TABLE_NAME: ${self:custom.TasksTable.name}
   iamRoleStatements:
-    - ${file(iam/TasksTableIAM.yml):TasksTableIAM}
+    - ${file(src/iam/TasksTableIAM.yml):TasksTableIAM}
 
 # you can overwrite defaults here
 #  stage: dev
@@ -83,7 +83,7 @@ functions:
 
 resources:
   Resources:
-    TasksTable: ${file(resources/TasksTable.yml):TasksTable}
+    TasksTable: ${file(src/resources/TasksTable.yml):TasksTable}
 
 custom:
   TasksTable:

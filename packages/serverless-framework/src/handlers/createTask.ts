@@ -10,6 +10,7 @@ interface Body {
   title: string;
   description: string;
 }
+
 const taskSchema = {
   properties: {
     body: {
